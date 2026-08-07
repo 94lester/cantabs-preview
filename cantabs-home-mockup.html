@@ -489,8 +489,10 @@
   // Club notice banner. Live build: officers keep a "Notice" tab in the club
   // Google Sheet with three cells: Show (YES/NO), Type (info/on/off), Message.
   // The site fetches it like the fixtures page does; empty or NO means hidden.
-  // The demo below shows an example notice so the design is visible.
-  const NOTICE_DEMO = { show: true, type: 'info', label: 'Sat 29 Aug', text: 'Cantabs 10s Festival and the Annual Beer Festival at Sedley Taylor Road. Everyone welcome.' };
+  // Events are promoted by the next-event banner (assemble.ps1), so this one
+  // is reserved for officers' announcements: game off, pitch closed, and so on.
+  // Demo off; flip show to true to see the design.
+  const NOTICE_DEMO = { show: false, type: 'info', label: 'Club notice', text: 'Example: All pitches closed this Saturday. League fixtures move to 12 December.' };
   if (NOTICE_DEMO.show) {
     const n = document.getElementById('notice');
     document.getElementById('notice-label').textContent = NOTICE_DEMO.label;
