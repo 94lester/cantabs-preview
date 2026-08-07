@@ -64,6 +64,14 @@
   .pagehero .eyebrow{color:var(--steel-300)}
   .pagehero p{max-width:38em;margin-top:16px;color:var(--steel-300)}
 
+  /* team switcher */
+  .teamswitch{background:var(--white);border-bottom:1px solid var(--steel-300)}
+  .teamswitch .wrap{display:flex;align-items:center;gap:2px;overflow-x:auto}
+  .teamswitch .lbl{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-ink);font-weight:600;margin-right:14px;white-space:nowrap}
+  .teamswitch a{font-family:var(--display);font-stretch:condensed;font-size:18px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--steel-ink);padding:14px 16px;border-bottom:3px solid transparent;white-space:nowrap}
+  .teamswitch a:hover{color:var(--navy-900)}
+  .teamswitch a[aria-current]{color:var(--navy-900);border-bottom-color:var(--navy-700)}
+  @media(max-width:480px){.teamswitch .lbl{display:none}.teamswitch a{padding:13px 12px;font-size:17px}}
   .statbar{background:var(--navy-900);color:var(--white)}
   .statbar .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
   .stat{padding:26px 28px;border-left:1px solid rgba(255,255,255,.12)}
@@ -154,7 +162,7 @@
       </span>
     </a>
     <nav class="navlinks" aria-label="Main">
-      <a href="#">Our Club</a>
+      <a href="cantabs-home-mockup.html">Our Club</a>
       <a href="#" aria-current="page">Teams</a>
       <a href="cantabs-fixtures-mockup.html">Fixtures</a>
       <a href="https://vx-3.com/collections/cantabrigian-rufc">Club Shop</a>
@@ -172,6 +180,16 @@
     <p>Competitive league rugby every Saturday and the proving ground for the top grade. Sixteen league games, eight of them at home.</p>
   </div>
 </section>
+
+<nav class="teamswitch" aria-label="Cantabs teams">
+  <div class="wrap">
+    <span class="lbl">Teams</span>
+    <a href="cantabs-1xv-mockup.html">1XV</a>
+    <a href="#" aria-current="page">2XV</a>
+    <a href="cantabs-3xv-mockup.html">3XV</a>
+    <a href="cantabs-home-mockup.html#join">Women</a>
+  </div>
+</nav>
 
 <section class="statbar">
   <div class="wrap">
@@ -287,7 +305,7 @@
       <a href="cantabs-1xv-mockup.html">Cantabs 1XV<span>Counties 1 Eastern Counties</span></a>
       <a href="#" aria-current="page">Cantabs 2XV<span>Eastern Counties 1 West</span></a>
       <a href="cantabs-3xv-mockup.html">Cantabs 3XV<span>Eastern Counties 2 West</span></a>
-      <a href="#">Cantabs Women<span>New for 2026/27</span></a>
+      <a href="cantabs-home-mockup.html#join">Cantabs Women<span>New for 2026/27</span></a>
     </nav>
   </div>
 </section>
