@@ -162,9 +162,10 @@
       <div class="mapfoot">
         <div>
           <div class="addr">Cantabrigian RUFC, 23 Sedley Taylor Road, Cambridge CB2 8PW</div>
+          <div class="attr">Prefer a specific app? <a href="https://www.google.com/maps/dir/?api=1&amp;destination=52.1800847,0.1330587" target="_blank" rel="noopener">Google Maps</a> · <a href="https://maps.apple.com/?daddr=52.1800847,0.1330587&amp;dirflg=d" target="_blank" rel="noopener">Apple Maps</a> · <a href="https://waze.com/ul?ll=52.1800847,0.1330587&amp;navigate=yes" target="_blank" rel="noopener">Waze</a></div>
         </div>
         <div class="btns">
-          <a class="btn btn-navy" href="https://www.google.com/maps/dir/?api=1&amp;destination=52.1800847,0.1330587" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn btn-navy" id="dirbtn" href="https://www.google.com/maps/dir/?api=1&amp;destination=52.1800847,0.1330587" target="_blank" rel="noopener">Get directions</a>
         </div>
       </div>
     </div>
@@ -222,6 +223,24 @@
   </div>
   <div class="legal">© 2026 Cantabs RUFC · Cantabrigian Rugby Union Football Club · Match photography by BW Sports Photography</div>
 </footer>
+
+<script>
+  // Get directions opens the visitor's own satnav where the platform allows:
+  // Android's geo: link hands over to their chosen maps app (Google Maps,
+  // Waze, whatever they favour), iPhones get Apple Maps directions, and
+  // everyone else keeps the Google Maps link the button ships with.
+  (function () {
+    var a = document.getElementById('dirbtn');
+    if (!a) return;
+    var lat = '52.1800847', lng = '0.1330587', ua = navigator.userAgent;
+    if (/Android/i.test(ua)) {
+      a.href = 'geo:' + lat + ',' + lng + '?q=' + lat + ',' + lng + '(Cantabs RUFC)';
+      a.removeAttribute('target');
+    } else if (/iPhone|iPad|iPod/i.test(ua)) {
+      a.href = 'https://maps.apple.com/?daddr=' + lat + ',' + lng + '&dirflg=d';
+    }
+  })();
+</script>
 
 </body>
 </html>
